@@ -3,7 +3,7 @@
 ## Project review 
 This project is carried out on KULTRAY MEGA STORE (KMS) INVENTORY which specialize in office supplies and furniture to help analyze their sales data from 2009 to 2012 which is crucial for every business to ensure they have enough stock to meet customer demand without incurring excessive storage cost or experiencing stock out ‘to help provide dynamic understanding of inventory performance of the business for good decision making of the organization.
 
-## Tools Used: SQL
+## Tools Used: Microsoft SQL Server
 
 ## Data Source 
 The dataset for this project was extracted from DSA Learning Management System (LMS) as part of our final project.
