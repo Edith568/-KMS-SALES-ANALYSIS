@@ -152,6 +152,48 @@ OP 3AND BOTTOM 3 BY REGION IN TERMS OF SALES(BUTTOM TOP 3 REGION BY SALES](https
 
 ![TOP 5 CORPERATE CUSTOMERS THAT PLACED THE MOST NUMBER OF ORDERS IN 2009](https://github.com/user-attachments/assets/abb18223-4a0b-4777-9b3e-693f275835ce)
 
+## Most Profitable Consumer Customer
 
+          SELECT Top 1 Customer_Name, SUM(Profit) AS total_profit
+          FROM [KMS Sql Case Study]
+          WHERE Customer_Segment = 'Consumer'
+          GROUP BY Customer_Name
+          ORDER BY total_profit DESC
+
+![MOST PROFITABLE CONSUMER CUSTOMER](https://github.com/user-attachments/assets/e3e29e88-0abc-4e28-ba3a-934020fb1d23)
+
+## Top 5 Most Profitable Consumer Customer
+
+        SELECT Top 5 Customer_Name, SUM(Profit) AS total_profit
+        FROM [KMS Sql Case Study]
+        WHERE Customer_Segment = 'Consumer'
+        GROUP BY Customer_Name
+        ORDER BY total_profit DESC
+
+![TOP 5 MOST PROFITABLE CONSUMER CUSTOMER](https://github.com/user-attachments/assets/490ed662-a894-4714-b706-47378a0af2f6)
+
+## Customer that returned items, and the segment they belong to
+      
+#### Joining the two tables ([KMS Sql Case Study] and Order_Status) together
+
+          SELECT DISTINCT [KMS Sql Case Study].customer_name, [KMS Sql Case Study].customer_segment
+          FROM [KMS Sql Case Study]
+          JOIN Order_Status 
+          ON [KMS Sql Case Study].Order_ID = Order_Status.Order_ID
+          WHERE [Status] = 'Returned'
+
+![CUSTOMERS THAT RETURNED ITEMS AND THE SEGMENT THEY BELONG TO (JOINING KMS AND ORDER STATUS TABLE TOGETHER](https://github.com/user-attachments/assets/9d9e5878-5c28-4f5d-bb01-eb735ec68a84)
+
+## Shipping Cost by Order Priority and Shipping Method
+
+          SELECT 
+              Order_Priority,
+              Ship_Mode,
+              SUM(Shipping_Cost) AS Total_Shipping_Cost
+          FROM [KMS Sql Case Study]
+          GROUP BY Order_Priority, Ship_Mode
+          ORDER BY Order_Priority, Ship_Mode
+
+![SHIPPING COST BY ORDER PRIORITY AND SHIPPING METHOD](https://github.com/user-attachments/assets/11f824d1-c440-4b24-acca-24e900a3b752)
 
 
